@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include "FileBook.h"
 using namespace std;
 /*
 Создайте класс Book
@@ -23,7 +24,7 @@ class Book
 	char* _publisher;
 	int _year;
 	int _pages;
-
+	friend class FileBook;
 
 public:
 	Book(const char* a, const char* n, char* p, int y, int page):
@@ -53,7 +54,6 @@ public:
 		}
 		return in;
 	}
-
 	ostream& ShowYearBook(ostream& in, int year, int size) {
 
 		for (int i = 0; i < size; i++) {
@@ -63,5 +63,7 @@ public:
 		}
 		return in;
 	}
+
+
 };
 
